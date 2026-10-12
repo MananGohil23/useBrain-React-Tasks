@@ -4,7 +4,7 @@ export default function SliceParty() {
   const [slices, setSlices] = useState(0)
 
   const addOne = () => {
-    setSlices(slices + 1)
+    setSlices(addSlices => addSlices + 1)
   }
 
   // Three friends each grab a slice. Do not change this function, fix addOne.

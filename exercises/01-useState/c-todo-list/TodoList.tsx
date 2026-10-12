@@ -8,15 +8,12 @@ export default function TodoList({ initialTodos }: { initialTodos: Todo[] }) {
 
   const add = () => {
     if (!text.trim()) return
-    todos.push({ id: Date.now(), text, done: false })
-    setTodos(todos)
+    setTodos(todos => [...todos, { id: todos.length +1, text, done: false }])
     setText('')
   }
 
   const toggle = (id: number) => {
-    const todo = todos.find(t => t.id === id)!
-    todo.done = !todo.done
-    setTodos(todos)
+    setTodos(todos => todos.map(t => (t.id === id ? {...t, done: !t.done} : t)))
   }
 
   return (

@@ -1,15 +1,10 @@
 import { useState } from 'react'
 
 export default function Counter() {
-  let count = 0
+  const [count , setCount] = useState(0);
 
-  const add = () => {
-    count += 1
-  }
-
-  const remove = () => {
-    count -= 1
-  }
+  const add = () => setCount(count + 1);
+  const remove = () => setCount(count - 1);
 
   return (
     <div>

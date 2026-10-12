@@ -3,3 +3,4 @@ dist
 grade-out
 results
 .DS_Store
+package-lock.json

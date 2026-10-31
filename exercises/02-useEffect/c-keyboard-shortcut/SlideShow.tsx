@@ -10,6 +10,10 @@ export default function SlideShow() {
       if (e.key === 'ArrowRight') setIndex(i => (i + 1) % slides.length)
     }
     window.addEventListener('keydown', onKey)
+
+    return () => {
+      window.removeEventListener('keydown', onKey)
+    }
   })
 
   return (

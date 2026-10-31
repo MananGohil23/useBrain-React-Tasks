@@ -6,12 +6,12 @@ export default function Greeting({ onMount }: { onMount?: () => void }) {
   // Should run ONCE, when the greeting first appears.
   useEffect(() => {
     onMount?.()
-  })
+  }, [])
 
   // Should run whenever the name changes.
   useEffect(() => {
     document.title = name ? `Hi, ${name}` : 'Hi, stranger'
-  }, [])
+  }, [name])
 
   return (
     <div>
